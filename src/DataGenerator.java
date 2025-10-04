@@ -1,13 +1,19 @@
 
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
+import java.util.HashSet;
 import java.util.Random;
+import java.util.Set;
 
 public class DataGenerator {
 	private static int seed = 1001; // change the seed to get different data
 	private static Random r = new Random(seed);
 	private static int minLength = 20;
 	private static int maxLength = 120;
+	private static int resetApprox = 500; // the probability of resetting a string sequence is 1 in resetApprox. 
+	private static int minBitsPercent = 5; // In a string sequence the number of bits to change is uniformly distributed between the min and max percentages
+	private static int maxBitsPercent = 20;
+	
 
 	public static void main(String[] args) throws FileNotFoundException {
 		if (args.length < 3) {
@@ -25,28 +31,26 @@ public class DataGenerator {
 			System.exit(0);
 		}
 
-		String[] data = new String[n+1]; // Adding the target string to the output as the last value
+		String[] data = new String[n+1]; // n+1: Adding the target string to the output as the last value
 		
 		// Trying BigInteger constructor, to remove:
 //		data[0] = "0101"; // Value = 5, leading 0
 //		BigInteger test = new BigInteger(data[0],2);
 //		data[1] = test.toString();
 		
-
-//		for (int i = 0; i < n; ++i) {
-//			StringBuffer num = new StringBuffer();
-//
-//			// generating digits of the numbers
-//			for (int j = 0; j < len; ++j) {
-//				char d = (char) ('0' + r.nextInt(10));
-//				num.append(d);
-//			}
-//
-//			data[i] = num.toString();
-//		}
+		data[0] = generateNewStr(len); // starting the first sequence
+		
+		for (int i = 1; i < n; ++i) {
+			if (r.nextInt(resetApprox)== 0) {
+			 data[i] = generateNewStr(len);
+			} else {
+				// to-do: generate the # of changed bits
+				data[i] = changeString(data[i-1], len, minBitsPercent);
+			}
+		}
 
 		// Generate one more string and add it to the output:
-		
+		data[n] = generateNewStr(len);
 		
 		PrintWriter out = new PrintWriter(outFileName);
 		for (String s : data) {
@@ -59,7 +63,12 @@ public class DataGenerator {
 	 * A method that generates a new random string of 0s and 1s of length len 
 	 */
 	public static String generateNewStr(int len) {
-		return "0101";
+		StringBuilder str = new StringBuilder(len);
+		
+		for (int i = 0; i < len; ++i) {
+			str.append(r.nextInt(2));
+		}
+		return str.toString();
 	}
 	
 	/*
@@ -68,7 +77,25 @@ public class DataGenerator {
 	 * for with probability 1/2 (resulting of toChange/2 bits changed on average)
 	 */
 	public static String changeString(String str, int len, int toChange) {
-		return "0101";
+		StringBuilder changedStr = new StringBuilder(str);
+		// generate positions to change:
+		Set<Integer> indices = new HashSet<>();
+		while (indices.size() < toChange) {
+			indices.add(r.nextInt(len)); // using set to avoid duplicated indices 
+		}
+		
+		for (int i : indices) {
+			// change the bit with the probability of 1/2
+			if (r.nextInt(2) == 0) {
+				if (changedStr.charAt(i) == '0') {
+					changedStr.setCharAt(i, '1');
+				} else {
+					changedStr.setCharAt(i, '0');
+				}
+			}
+		}
+		
+		return changedStr.toString();
 	}
 
 }
