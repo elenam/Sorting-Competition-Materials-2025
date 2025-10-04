@@ -33,11 +33,6 @@ public class DataGenerator {
 
 		String[] data = new String[n+1]; // n+1: Adding the target string to the output as the last value
 		
-		// Trying BigInteger constructor, to remove:
-//		data[0] = "0101"; // Value = 5, leading 0
-//		BigInteger test = new BigInteger(data[0],2);
-//		data[1] = test.toString();
-		
 		data[0] = generateNewStr(len); // starting the first sequence
 		
 		for (int i = 1; i < n; ++i) {

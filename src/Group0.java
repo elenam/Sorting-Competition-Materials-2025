@@ -14,7 +14,6 @@ import java.util.Scanner;
 // of your lab machine.
 
 public class Group0 {
-	private static String target;
 
 	public static void main(String[] args) throws InterruptedException, FileNotFoundException {
 
@@ -29,13 +28,18 @@ public class Group0 {
 		// Uncomment to test comparator methods
 		SortingCompetitionComparator.runComparatorTests();
 
-		String[] data = readData(inputFileName); // read data as strings
+		ArrayList<String> input = readData(inputFileName); // includes the target string
+		// move the target string out of data into a variable:
+		String target = input.get(input.size() - 1);
+		input.remove(input.size() - 1);
+		
+		String[] data = input.toArray(new String[0]); // read data as strings
 		
 		System.out.println("The target string is: " + target);
 
 		String[] toSort = data.clone(); // clone the data
 
-		sort(toSort); // call the sorting method once for JVM warmup
+		sort(toSort,target); // call the sorting method once for JVM warmup
 
 		toSort = data.clone(); // clone again
 
@@ -43,7 +47,7 @@ public class Group0 {
 
 		long start = System.currentTimeMillis();
 
-		sort(toSort); // sort again
+		sort(toSort,target); // sort again
 
 		long end = System.currentTimeMillis();
 
@@ -53,7 +57,7 @@ public class Group0 {
 
 	}
 
-	private static String[] readData(String inputFileName) throws FileNotFoundException {
+	private static ArrayList<String> readData(String inputFileName) throws FileNotFoundException {
 		ArrayList<String> input = new ArrayList<>();
 		Scanner in = new Scanner(new File(inputFileName));
 
@@ -63,12 +67,8 @@ public class Group0 {
 
 		in.close();
 		
-		// move the target string out of data into a global variable:
-		target = input.get(input.size() - 1);
-		input.remove(input.size() - 1);
-
-		// the string array is passed just so that the correct type can be created
-		return input.toArray(new String[0]);
+		// returns the input as an ArrayList. The last element is the target string
+		return input;
 	}
 
 	// YOUR SORTING METHOD GOES HERE.
@@ -77,11 +77,16 @@ public class Group0 {
 	// You would need to provide your own function that prints your sorted array to
 	// a file in the exact same format that my program outputs
 
-	private static void sort(String[] toSort) {
-		Arrays.sort(toSort, new SortingCompetitionComparator());
+	private static void sort(String[] toSort, String target) {
+		Arrays.sort(toSort, new SortingCompetitionComparator(target));
 	}
 
 	private static class SortingCompetitionComparator implements Comparator<String> {
+		private String target;
+		
+		public SortingCompetitionComparator(String target) {
+			this.target = target;
+		}
 
 		@Override
 		public int compare(String s1, String s2) {
@@ -103,7 +108,7 @@ public class Group0 {
 
 		}
 		
-		private static int distanceToTarget(String str) {
+		private int distanceToTarget(String str) {
 			int count = 0;
 			
 			// Finding the difference for s1
@@ -117,20 +122,17 @@ public class Group0 {
 		}
 		
 		private static void runComparatorTests() {
-			// replace the target string to run tests:
-			String actualTarget = target;
-			target = "0000000000"; // to make tests easier
-			System.out.println(target.length());
+			// creating an instance of a comparator with a mock target string:
+			SortingCompetitionComparator strComp = new SortingCompetitionComparator("0000000000");
+			
 			
 			// Testing distance to target
-			System.out.println("distanceToTarget(\"1010101010\") = " + distanceToTarget("1010101010")); // should be 5
-			System.out.println("distanceToTarget(\"1111101111\") = " + distanceToTarget("1111101111")); // should be 9
+			System.out.println("distanceToTarget(\"1010101010\") = " + strComp.distanceToTarget("1010101010")); // should be 5
+			System.out.println("distanceToTarget(\"1111101111\") = " + strComp.distanceToTarget("1111101111")); // should be 9
 			
 			// Testing the comparator:
-			
-			
-			// restore the actual target string:
-			target = actualTarget;			
+			System.out.println(strComp.compare("1010000000","0010001000")); // same distance from target string, 1st string larger
+					
 		}
 	}
 
