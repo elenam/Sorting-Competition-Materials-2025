@@ -2,6 +2,7 @@
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
+import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
@@ -26,9 +27,11 @@ public class Group0 {
 		String outFileName = args[1];
 
 		// Uncomment to test comparator methods
-		// SortingCompetitionComparator.runComparatorTests();
+		SortingCompetitionComparator.runComparatorTests();
 
 		String[] data = readData(inputFileName); // read data as strings
+		
+		System.out.println("The target string is: " + target);
 
 		String[] toSort = data.clone(); // clone the data
 
@@ -82,9 +85,52 @@ public class Group0 {
 
 		@Override
 		public int compare(String s1, String s2) {
+			// first criterion: the number of bits different from the target string:
+			int count1 = distanceToTarget(s1);
+			
+			int count2 = distanceToTarget(s2);
+			
+			// second criterion: the value of the binary numbers in the strings:
+			BigInteger n1 = new BigInteger(s1, 2); // converting a binary number into a BigInteger
+			BigInteger n2 = new BigInteger(s2, 2); // converting a binary number into a BigInteger
+			
+			if (count1 - count2 != 0) { // if the difference from the target string aren't the same 
+				return (count1 - count2); // return a number < 0 if the first string is closer, > 0 if the second one is
+			}
+			
+			// if the two counts are the same
+			return n1.compareTo(n2);
 
-			return 0;
-
+		}
+		
+		private static int distanceToTarget(String str) {
+			int count = 0;
+			
+			// Finding the difference for s1
+			for (int i = 0; i < target.length(); ++i) {
+				if (target.charAt(i) != str.charAt(i)) {
+					count++;
+				}
+			}
+			
+			return count;
+		}
+		
+		private static void runComparatorTests() {
+			// replace the target string to run tests:
+			String actualTarget = target;
+			target = "0000000000"; // to make tests easier
+			System.out.println(target.length());
+			
+			// Testing distance to target
+			System.out.println("distanceToTarget(\"1010101010\") = " + distanceToTarget("1010101010")); // should be 5
+			System.out.println("distanceToTarget(\"1111101111\") = " + distanceToTarget("1111101111")); // should be 9
+			
+			// Testing the comparator:
+			
+			
+			// restore the actual target string:
+			target = actualTarget;			
 		}
 	}
 
