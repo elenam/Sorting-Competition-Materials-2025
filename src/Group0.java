@@ -91,8 +91,8 @@ public class Group0 {
 		@Override
 		public int compare(String s1, String s2) {
 			// first criterion: the number of bits different from the target string:
-			int count1 = distanceToTarget(s1);
 			
+			int count1 = distanceToTarget(s1);			
 			int count2 = distanceToTarget(s2);
 			
 			// second criterion: the value of the binary numbers in the strings:
@@ -109,6 +109,12 @@ public class Group0 {
 		}
 		
 		private int distanceToTarget(String str) {
+			// It's ok to comment out this test during the competition,
+			// it's for debugging purposes only. 
+			if (str.length() != target.length()) {
+				throw new RuntimeException("Comparing strings of different lengths");
+			}
+			
 			int count = 0;
 			
 			// Finding the difference for s1
@@ -131,8 +137,19 @@ public class Group0 {
 			System.out.println("distanceToTarget(\"1111101111\") = " + strComp.distanceToTarget("1111101111")); // should be 9
 			
 			// Testing the comparator:
+			System.out.println(strComp.compare("1010000000","0010101000")); // different distance from the target, 1st string smaller
+			System.out.println(strComp.compare("1010011001","0010101000")); // different distance from the target, 1st string larger
 			System.out.println(strComp.compare("1010000000","0010001000")); // same distance from target string, 1st string larger
-					
+			System.out.println(strComp.compare("1010000000","1110001000")); // same distance from target string, 1st string smaller
+			System.out.println(strComp.compare("1010000000","1010000000")); // string equals to itself
+			
+			// Testing real-test 100 character strings; all comparisons should come out negative
+			SortingCompetitionComparator strComp1 = new SortingCompetitionComparator("0110011111000000110010001001111100001100000100111101011101100110101000011010000100101010011011100110");
+			System.out.println(strComp1.compare("0100010011000001111100001011110100000100011101111001010100100110110010101011000101010010001111100100",
+					"0100010011000001111100001011110100000100011101111001010100100110110010101011000101010010001110100100"));
+			System.out.println(strComp1.compare("0010001101010101111111000011110101000100101100011101011111101001100011111000000000101010011010101000",
+					"0110011001010000100110111010110010000000011001111101010000010010101001011000000110110010011101101110"));
+			
 		}
 	}
 
