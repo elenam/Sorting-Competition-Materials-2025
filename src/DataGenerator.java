@@ -8,8 +8,10 @@ import java.util.Set;
 public class DataGenerator {
 	private static int seed = 1001; // change the seed to get different data
 	private static Random r = new Random(seed);
+	// fixed parameters:
 	private static int minLength = 20;
 	private static int maxLength = 120;
+	// these parameters may be changed, see README for ranges:
 	private static int resetApprox = 500; // the probability of resetting a string sequence is 1 in resetApprox. 
 	private static int minBitsPercent = 5; // In a string sequence the number of bits to change is uniformly distributed between the min and max percentages
 	private static int maxBitsPercent = 20;

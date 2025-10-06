@@ -14,8 +14,13 @@ import java.util.Scanner;
 // of your lab machine.
 
 public class Group0 {
+	
+	// You may add variables here, as long as the total memory is constant and no more than 
+	// 1000 * string length. 
 
 	public static void main(String[] args) throws InterruptedException, FileNotFoundException {
+		// You may not change anything in main, except the lines that are specifically 
+		// commented allowing certain changes. 
 
 		if (args.length < 2) {
 			System.out.println("Please run with two command line arguments: input and output file names");
@@ -26,7 +31,7 @@ public class Group0 {
 		String outFileName = args[1];
 
 		// Uncomment to test comparator methods
-		SortingCompetitionComparator.runComparatorTests();
+		// SortingCompetitionComparator.runComparatorTests();
 
 		ArrayList<String> input = readData(inputFileName); // includes the target string
 		// move the target string out of data into a variable:
@@ -35,11 +40,14 @@ public class Group0 {
 		
 		String[] data = input.toArray(new String[0]); // read data as strings
 		
-		System.out.println("The target string is: " + target);
+		// Test print
+		// System.out.println("The target string is: " + target);
 
 		String[] toSort = data.clone(); // clone the data
-
-		sort(toSort,target); // call the sorting method once for JVM warmup
+		
+		// If you changed the return type of 'sort', you may change this line accordingly
+		
+		sort(toSort,target); // we call the sorting method once for JVM warmup (JVM optimizations)
 
 		toSort = data.clone(); // clone again
 
@@ -47,17 +55,23 @@ public class Group0 {
 
 		long start = System.currentTimeMillis();
 
-		sort(toSort,target); // sort again
+		// If you changed the return type of 'sort', you may change this line accordingly
+		sort(toSort,target); // sort again, using JVM optimizations that occurred in the warmup sorting
 
 		long end = System.currentTimeMillis();
 
 		System.out.println(end - start);
 
+		// If you returned a different type of an array from sort, you may 
+		// pass this array to the writeOutResult method
 		writeOutResult(toSort, outFileName); // write out the results
 
 	}
 
 	private static ArrayList<String> readData(String inputFileName) throws FileNotFoundException {
+		// You are allowed to collect a constant amount of information as you are reading
+		// the data. The variables needs to be allocated for it before you start reading. 
+		
 		ArrayList<String> input = new ArrayList<>();
 		Scanner in = new Scanner(new File(inputFileName));
 
@@ -78,6 +92,16 @@ public class Group0 {
 	// a file in the exact same format that my program outputs
 
 	private static void sort(String[] toSort, String target) {
+		// This, and all the methods/objects used here, can be changed/removed as you want. 
+		// You may modify the comparator, or not use it at all.
+		// You may change the type of elements you are sorting and return an array of different
+		// type, as long as it has the same elements (just stored differently) in the same order
+		// as the sorted array of strings. 
+		
+		// If you are creating or modifying any global variables, you need to reset them 
+		// to the original state after your sorting is done.  
+		
+		// This sorting gives you the correct sorted order:
 		Arrays.sort(toSort, new SortingCompetitionComparator(target));
 	}
 
