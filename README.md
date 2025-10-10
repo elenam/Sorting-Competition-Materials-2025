@@ -9,6 +9,7 @@ Materials and results for the UMN Morris CSci 3501 sorting competition, Fall 202
 * [Setup for sorting](#setup)
 * [Submision deadlines](#deadlines)
 * [Scoring](#scoring)
+* [Results of preliminary rounds](#prelim)
 
 
 ## Goal of the competition <a name="goal"></a>
@@ -97,9 +98,9 @@ The final competition will be on Thursday October 23rd in the lab (due Wed Oct 2
 
 The dates for other related assignments (code review and presentations) will be announced later. 
 
-## Results of preliminary rounds <a name"prelim"></a>
+## Results of preliminary rounds <a name="prelim"></a>
 
-The folder [prelim1](https://github.com/elenam/Sorting-Competition-Materials-2025/tree/main/prelim1) has the following:
+The folder [prelim1](https://github.com/elenam/Sorting-Competition-Materials-2025/tree/main/prelim1) has the results of the first preliminary round (Oct 10th) as following:
    * The `.class` files for all the submitted code that followed the setup
    * The script [run_all.rb](prelim1/run_all.rb) that runs the all the files and creates the scoreboard
    * Two test files:
