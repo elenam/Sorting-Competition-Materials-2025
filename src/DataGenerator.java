@@ -12,9 +12,9 @@ public class DataGenerator {
 	private static int minLength = 20;
 	private static int maxLength = 120;
 	// these parameters may be changed, see README for ranges:
-	private static int resetApprox = 500; // the probability of resetting a string sequence is 1 in resetApprox. 
-	private static int minBitsPercent = 5; // In a string sequence the number of bits to change is uniformly distributed between the min and max percentages
-	private static int maxBitsPercent = 20;
+	private static int resetApprox = 100; // the probability of resetting a string sequence is 1 in resetApprox. 
+	private static int minBitsPercent = 20; // In a string sequence the number of bits to change is uniformly distributed between the min and max percentages
+	private static int maxBitsPercent = 70;
 	
 
 	public static void main(String[] args) throws FileNotFoundException {
