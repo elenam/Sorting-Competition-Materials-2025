@@ -41,8 +41,8 @@ public class DataGenerator {
 			if (r.nextInt(resetApprox)== 0) {
 			 data[i] = generateNewStr(len);
 			} else {
-				// Generate the # of changed bits:
-				int toChange = r.nextInt(minBitsPercent, maxBitsPercent);
+				// Generate the # of changed bits: (min so it is always less than length of string)
+				int toChange = Integer.min(r.nextInt(minBitsPercent, maxBitsPercent), len - 1);
 				data[i] = changeString(data[i-1], len, toChange);
 			}
 		}
