@@ -12,9 +12,9 @@ public class DataGenerator {
 	private static int minLength = 20;
 	private static int maxLength = 120;
 	// these parameters may be changed, see README for ranges:
-	private static int resetApprox = 100; // the probability of resetting a string sequence is 1 in resetApprox. 
-	private static int minBitsPercent = 20; // In a string sequence the number of bits to change is uniformly distributed between the min and max percentages
-	private static int maxBitsPercent = 70;
+	private static int resetApprox = 2000; // the probability of resetting a string sequence is 1 in resetApprox. 
+	private static int minBitsPercent = 40; // In a string sequence the number of bits to change is uniformly distributed between the min and max percentages
+	private static int maxBitsPercent = 60;
 	
 
 	public static void main(String[] args) throws FileNotFoundException {
@@ -39,12 +39,13 @@ public class DataGenerator {
 		
 		for (int i = 1; i < n; ++i) {
 			if (r.nextInt(resetApprox)== 0) {
-			 data[i] = generateNewStr(len);
+				data[i] = generateNewStr(len);
 			} else {
 				// Generate the # of changed bits:
-				int toChange = r.nextInt(minBitsPercent, maxBitsPercent);
+				int toChangePercent = r.nextInt(minBitsPercent, maxBitsPercent); // percentage of bits
+				int toChange = (len * toChangePercent)/100; // number of bits to change 
 				data[i] = changeString(data[i-1], len, toChange);
-			}
+			} 
 		}
 
 		// Generate one more string and add it to the output:
@@ -76,6 +77,7 @@ public class DataGenerator {
 	 */
 	public static String changeString(String str, int len, int toChange) {
 		StringBuilder changedStr = new StringBuilder(str);
+		
 		// generate positions to change:
 		Set<Integer> indices = new HashSet<>();
 		while (indices.size() < toChange) {
