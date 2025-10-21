@@ -100,6 +100,8 @@ The dates for other related assignments (code review and presentations) will be 
 
 ## Results of preliminary rounds <a name="prelim"></a>
 
+### Preliminary round 1
+
 The folder [prelim1](https://github.com/elenam/Sorting-Competition-Materials-2025/tree/main/prelim1) has the results of the first preliminary round (Oct 10th) as following:
    * The `.class` files for all the submitted code that followed the setup
    * The script [run_all.rb](prelim1/run_all.rb) that runs the all the files and creates the scoreboard
@@ -109,6 +111,18 @@ The folder [prelim1](https://github.com/elenam/Sorting-Competition-Materials-202
    * The outputs of the sorting these files by Group0 (the correct sorting) and by Group8 (the only group that sorted incorrectly, of those who sorted at all)
    * The results of the two runs in the files [results1.txt](prelim1/results1.txt) and [results2.txt](prelim1/results2.txt), respectively.
    * The overall score in [scoreboard.txt](prelim1/scoreboard.txt) Note that groups that don't have working code, had an error (an exception), or had an incorrect output of sorting are assessed 1000000ms penalty per round where any of these things happened.  
+
+### Preliminary round 2
+
+The folder [prelim2](https://github.com/elenam/Sorting-Competition-Materials-2025/tree/main/prelim2) has the results of the first preliminary round (Oct 10th) as following:
+   * The `.class` files for all the submitted code that followed the setup
+   * The script [run_all.rb](prelim2/run_all.rb) that runs the all the files and creates the scoreboard
+   * Two test files:
+      * [prelim3.txt](prelim2/prelim3.txt) has 1000000 strings of length 33 generated with `minBitsPercent = 40, `maxBitsPercent = 60, resetApprox = 2000`
+      * [prelim4.txt](prelim2/prelim4.txt) has 276543 strings of length 108 generated with `minBitsPercent = 2, `maxBitsPercent = 15, resetApprox = 5000`
+   * The outputs of the sorting these files by Group0 (the correct sorting) and by Group2 (the only group that sorted incorrectly)
+   * The results of the two runs in the files [results1.txt](prelim2/results1.txt) and [results2.txt](prelim2/results2.txt), respectively.
+   * The overall score in [scoreboard.txt](prelim2/scoreboard.txt) Note that groups that don't have working code, had an error (an exception), or had an incorrect output of sorting are assessed 1000000ms penalty per round where any of these things happened.  
 
 
 
