@@ -1,0 +1,146 @@
+Running final2.txt
+
+
+ Group 0: 
+
+1080
+
+1074
+
+1073
+
+Median: 1074.0
+Results of diff:
+
+
+ Group 1: 
+
+172
+
+200
+
+171
+
+Median: 172.0
+Results of diff:
+
+
+ Group 2: 
+
+61
+
+60
+
+60
+
+Median: 60.0
+Results of diff:
+
+
+ Group 3: 
+
+56
+
+37
+
+52
+
+Median: 52.0
+Results of diff:
+
+
+ Group 4: 
+
+199
+
+200
+
+200
+
+Median: 200.0
+Results of diff:
+
+
+ Group 5: 
+
+848
+
+846
+
+923
+
+Median: 848.0
+Results of diff:
+
+
+ Group 6: 
+
+247
+
+246
+
+245
+
+Median: 246.0
+Results of diff:
+
+
+ Group 7: 
+
+217
+
+196
+
+217
+
+Median: 217.0
+Results of diff:
+
+
+ Group 8: 
+
+79
+
+79
+
+80
+
+Median: 79.0
+Results of diff:
+
+
+ Group 9: 
+
+51
+
+52
+
+34
+
+Median: 51.0
+Results of diff:
+
+
+ Group 10: 
+
+52
+
+46
+
+44
+
+Median: 46.0
+Results of diff:
+
+
+ Group 11: 
+
+114
+
+115
+
+101
+
+Median: 114.0
+Results of diff:
+

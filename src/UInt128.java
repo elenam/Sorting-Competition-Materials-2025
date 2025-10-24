@@ -73,7 +73,7 @@ public class UInt128 implements Comparable<UInt128> {
         int putBackAfterSortIndex = 0;
         // in each arraylist, sort the elements (null means use compareTo of elements)
         // then put the values of the whole array (as a string) in its spot.
-        for (int i = minIndex; i < maxIndex; i++) {
+        for (int i = minIndex; i <= maxIndex; i++) {
             array[i].sort(null);
             for (int j = 0; j < array[i].size(); j++) {
                 toSort[putBackAfterSortIndex++] = array[i].get(j).raw;
