@@ -11,6 +11,7 @@ Materials and results for the UMN Morris CSci 3501 sorting competition, Fall 202
 * [Scoring](#scoring)
 * [Results of preliminary rounds](#prelim)
 * [Results of the final round](#final)
+* [Presentation slides](#slides)
 
 
 ## Goal of the competition <a name="goal"></a>
@@ -146,3 +147,21 @@ Here are the results of the final round:
    * 9th place (6th in class): [Group 1](src/Group1.java) - Haider Merchant and Abhineswari Seelam
    * 10th place (7th in class): [Group 4](src/Group4.java) - Anton Olson and James Swearingen
    * 11th place (8th in class): [Group 5](src/Group5.java) - Ellis Weglewski and Keenan McCall
+   
+**Congratulations to the winners!!! Well done, everyone!!!**
+
+## Presentations slides <a name="slides"></a>   
+   * [Group 1](slides/Group1.pdf)
+   * [Group 2](slides/Group2.pdf)
+   * [Group 3](slides/Group3.pdf)
+   * [Group 4](slides/Group4.pdf)  
+   * [Group 5](slides/Group5.pdf)
+   * [Group 6](slides/Group6.pdf)
+   * [Group 7](slides/Group7.pdf)
+   * [Group 8](slides/Group8.pdf) 
+   * [Group 9](slides/Group9.pdf)
+   * [Group 10](slides/Group10.pdf)
+   * [Group 11](slides/Group11.pdf)
+ 
+     
+   
