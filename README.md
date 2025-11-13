@@ -10,6 +10,7 @@ Materials and results for the UMN Morris CSci 3501 sorting competition, Fall 202
 * [Submision deadlines](#deadlines)
 * [Scoring](#scoring)
 * [Results of preliminary rounds](#prelim)
+* [Results of the final round](#final)
 
 
 ## Goal of the competition <a name="goal"></a>
@@ -114,7 +115,7 @@ The folder [prelim1](https://github.com/elenam/Sorting-Competition-Materials-202
 
 ### Preliminary round 2
 
-The folder [prelim2](https://github.com/elenam/Sorting-Competition-Materials-2025/tree/main/prelim2) has the results of the first preliminary round (Oct 10th) as following:
+The folder [prelim2](https://github.com/elenam/Sorting-Competition-Materials-2025/tree/main/prelim2) has the results of the second preliminary round (Oct 21st) as following:
    * The `.class` files for all the submitted code that followed the setup
    * The script [run_all.rb](prelim2/run_all.rb) that runs the all the files and creates the scoreboard
    * Two test files:
@@ -124,7 +125,24 @@ The folder [prelim2](https://github.com/elenam/Sorting-Competition-Materials-202
    * The results of the two runs in the files [results1.txt](prelim2/results1.txt) and [results2.txt](prelim2/results2.txt), respectively.
    * The overall score in [scoreboard.txt](prelim2/scoreboard.txt) Note that groups that don't have working code, had an error (an exception), or had an incorrect output of sorting are assessed 1000000ms penalty per round where any of these things happened.  
 
+## Results of the final round <a name="final"></a>
 
+The folder [final](https://github.com/elenam/Sorting-Competition-Materials-2025/tree/main/final) has the results of the final competition, including the following:
+   * Two test files:
+      * [final1.txt](final/final1.txt) 
+      * [final2.txt](final/final2.txt) 
+   * The results of the two runs in the files [results1.txt](final/results1.txt) and [results2.txt](final/results2.txt), respectively.
+   * The overall score in [scoreboard.txt](final/scoreboard.txt) Note that groups that don't have working code, had an error (an exception), or had an incorrect output of sorting are assessed 1000000ms penalty per round where any of these things happened.
 
-
-
+Here are the results of the final round:
+   * 1st place (out of class): [Group 10](src/Group10.java)  - Emma Sax (UMN Morris CSci alumna).  
+   * 2nd place (1st in class): [Group 3](src/Group3.java) - Johnette Nagbe and Fiona Hussen
+   * 3rd place (out of class): [Group 11](src/Group11.java) - anonymous participant
+   * 4th place (2nd in class): [Group 2](src/Group2.java) - Mahathir and Blake
+   * 5th place (3rd in class): [Group 8](src/Group8.java) - Owen and George
+   * 6th place (out of class): [Group 9](src/Group9.java) - Ollie Willette (UMN Morris CSci alumnus). This group didn't sort correctly in the second run, but they fixed it for a [rerun](final2-rerun/scoreboard.txt). 
+   * 7th place (4th in class): [Group 7](src/Group7.java) - Harley H and Jaden R
+   * 8th place (5th in class): [Group 6](src/Group6.java) - Jakob and John
+   * 9th place (6th in class): [Group 1](src/Group1.java) - Haider Merchant and Abhineswari Seelam
+   * 10th place (7th in class): [Group 4](src/Group4.java) - Anton Olson and James Swearingen
+   * 11th place (8th in class): [Group 5](src/Group5.java) - Ellis Weglewski and Keenan McCall
