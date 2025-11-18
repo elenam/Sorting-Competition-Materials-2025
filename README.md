@@ -161,7 +161,6 @@ Here are the results of the final round:
    * [Group 8](slides/Group8.pdf) 
    * [Group 9](slides/Group9.pdf)
    * [Group 10](slides/Group10.pdf)
-   * [Group 11](slides/Group11.pdf)
  
      
    
